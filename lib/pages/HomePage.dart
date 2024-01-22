@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-            Text('100\$', style: TextStyle(color: Colors.white,fontSize: 22 ,fontWeight: FontWeight.bold),)
+            const Text('100\$', style: TextStyle(color: Colors.white,fontSize: 22 ,fontWeight: FontWeight.bold),)
           ],
         ),
       ),
