@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: const Text('Cars',
             style: TextStyle(
-                color: Colors.black87,
+                color: Colors.red,
                 fontSize: 24,
                 fontWeight: FontWeight.w500)),
         actions: [
@@ -25,14 +25,14 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {},
             icon: const Icon(
               Icons.notifications_none,
-              color: Colors.black87,
+              color: Colors.red,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.shopping_cart,
-              color: Colors.black87,
+              color: Colors.red,
             ),
           ),
         ],
@@ -77,11 +77,11 @@ class _HomePageState extends State<HomePage> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: type ? Colors.grey[200] : Colors.white),
+            color: type ? Colors.red : Colors.white),
         margin: const EdgeInsets.only(right: 10),
         child: Text(
           text,
-          style: TextStyle(color: Colors.black87, fontSize: type ? 15 : 14),
+          style: TextStyle(color: type? Colors.white : Colors.black87, fontSize: type ? 15 : 14),
         ),
       ),
     );
@@ -114,29 +114,31 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Expanded(child: Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('My Car',style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),),
                     SizedBox(height: 5,),
-                    Text('Electric',style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),),
+                    Text('100\$', style: TextStyle(color: Colors.white,fontSize: 22 ,fontWeight: FontWeight.bold),)
                   ],
-                )
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  height: 35,
-                  width: 35,
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
-                  child: const Icon(Icons.favorite_border),
-                )
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Text('Electric',style: TextStyle(color: Colors.red, fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
               ],
             ),
-            const Text('100\$', style: TextStyle(color: Colors.white,fontSize: 22 ,fontWeight: FontWeight.bold),)
+            Container(
+              alignment: Alignment.center,
+              height: 35,
+              width: 35,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.red),
+              child: const Icon(Icons.favorite_border, color: Colors.white,),
+            ),
           ],
         ),
       ),
